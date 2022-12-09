@@ -1,15 +1,25 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PhysicsGun : MonoBehaviour {
-    // Start is called before the first frame update
+
+    [SerializeField]
+    private List<InputActionReference> m_ShootActions = new List<InputActionReference>();
+
+    [SerializeField]
+    private Vector3 m_ShootDirection;
+
     void Start() {
+        m_ShootDirection.Normalize();
+    }
+
+    void Update() {
         
     }
 
-    // Update is called once per frame
-    void Update() {
-        
+    void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + 5f * m_ShootDirection);
     }
 }
