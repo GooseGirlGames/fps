@@ -10,8 +10,11 @@ public class PhysicsGun : MonoBehaviour {
     private Transform m_GunSource;
 
     [SerializeField]
-    [Range(0.01f, 20f)]
+    [Range(0.01f, 60f)]
     private float m_GunStrength;
+
+    [SerializeField]
+    private Rigidbody m_FishBody;
 
     private Rigidbody m_Rigidbody;
 
@@ -42,6 +45,8 @@ public class PhysicsGun : MonoBehaviour {
 
     private void Shoot() {
         Debug.Log("Boom");
-        m_Rigidbody.AddForce((-ShootDirection) * m_GunStrength, ForceMode.Impulse);
+        var force = (-ShootDirection) * m_GunStrength;
+        m_Rigidbody.AddForce(force, ForceMode.Impulse);
+        m_FishBody.AddForce(0.5f * force, ForceMode.Impulse);
     }
 }
