@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PhysicsGun : MonoBehaviour {
 
@@ -20,8 +21,12 @@ public class PhysicsGun : MonoBehaviour {
     [SerializeField]
     private LineRenderer m_LineRend;
 
+    [SerializeField]
+    private TMP_Text m_DebugText;
+
     private Rigidbody m_Rigidbody;
     private int m_ArmNumber;
+    private const float DISTANCE_THRES = 0.06f;
 
     public Vector3 ShootDirection {
         get => m_GunSource.forward;
@@ -70,10 +75,23 @@ public class PhysicsGun : MonoBehaviour {
     private void ProcessMouseInput() {
         var gun_pos = PositionInScreeenSpace();
         var mouse_pos = Mouse.current.position.ReadValue();
+
+        var screen_dimensions = new Vector3(Screen.width, Screen.height);
+        gun_pos = Util.DivideElementWise2(gun_pos, screen_dimensions);
+        mouse_pos = Util.DivideElementWise2(mouse_pos, screen_dimensions);
+
         var dist = Vector2.Distance(gun_pos, mouse_pos);
         if (m_ArmNumber == 1) {
-            Debug.Log(dist);
+            var cam = Camera.main;
+            Vector3 target = cam.ScreenToWorldPoint(new Vector3(mouse_pos.x, mouse_pos.y, 1));
+            Debug.DrawLine(m_GunSource.position, target);
+            if (m_DebugText) {
+                m_DebugText.text = "Dist: " + Mathf.Round(dist * 100f) / 100f;
+            }
         }
+
+        bool in_range = dist <= DISTANCE_THRES;
+        m_LineRendEnabled = in_range;
     }
 
     public void Shoot() {
@@ -84,8 +102,17 @@ public class PhysicsGun : MonoBehaviour {
     }
 
     public Vector2 PositionInScreeenSpace() {
-        var camera = Camera.current;
-        var pos = camera.WorldToScreenPoint(this.transform.position);
+        var camera = Camera.main;
+        if (!camera || !m_GunSource) {
+            if (!camera) {
+                Debug.LogWarning("No camera found in Tentacle " + m_ArmNumber);
+            }
+            if (!m_GunSource) {
+                Debug.LogWarning("No gun source for Tentacle " + m_ArmNumber);
+            }
+            return Vector2.zero;
+        }
+        var pos = camera.WorldToScreenPoint(m_GunSource.position);
         return new Vector2(pos.x, pos.y);
     }
 }
