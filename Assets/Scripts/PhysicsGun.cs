@@ -11,9 +11,7 @@ public class PhysicsGun : MonoBehaviour {
     [SerializeField]
     private Transform m_GunSource;
 
-    [SerializeField]
-    [Range(0.01f, 60f)]
-    private float m_GunStrength;
+    private float m_GunStrength = 30f;
 
     [SerializeField]
     private Rigidbody m_FishBody;
@@ -26,7 +24,6 @@ public class PhysicsGun : MonoBehaviour {
 
     private Rigidbody m_Rigidbody;
     private int m_ArmNumber;
-    private static int ArmCount = 0;
     private const float DISTANCE_THRES = 0.06f;
     private bool m_InRange = false;
 
@@ -42,10 +39,9 @@ public class PhysicsGun : MonoBehaviour {
 
     void Start() {
         m_Rigidbody = GetComponent<Rigidbody>();
-        // var actionname = m_ShootAction.action.name;
-        // var actionid_str = actionname[actionname.Length - 1];
-        // m_ArmNumber = Int32.Parse("" + actionid_str);
-        m_ArmNumber = ++ArmCount;
+        var actionname = m_ShootAction.action.name;
+        var actionid_str = actionname[actionname.Length - 1];
+        m_ArmNumber = Int32.Parse("" + actionid_str);
     }
 
     void Update() {
@@ -63,7 +59,6 @@ public class PhysicsGun : MonoBehaviour {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(m_GunSource.position, m_GunSource.position + 5f * ShootDirection);
     }
-
 
     private void UpdateLineRendererPositions(Vector3 origin, Vector3 destination) {
         m_LineRend.SetPosition(0, origin);
@@ -86,7 +81,7 @@ public class PhysicsGun : MonoBehaviour {
 
         var dist = Vector2.Distance(gun_pos, mouse_pos);
         if (m_ArmNumber == 1) {
-            var cam = GameManager.Instance.CurrentCamera;
+            var cam = Camera.main;
             Vector3 target = cam.ScreenToWorldPoint(new Vector3(mouse_pos.x, mouse_pos.y, 1));
             Debug.DrawLine(m_GunSource.position, target);
             if (m_DebugText) {
@@ -102,11 +97,11 @@ public class PhysicsGun : MonoBehaviour {
         Debug.Log("Boom");
         var force = (-ShootDirection) * m_GunStrength;
         m_Rigidbody.AddForce(force, ForceMode.Impulse);
-        m_FishBody.AddForce(0.5f * force, ForceMode.Impulse);
+        m_FishBody.AddForce(5f * force, ForceMode.Impulse);
     }
 
     public Vector2 PositionInScreeenSpace() {
-        var camera = GameManager.Instance.CurrentCamera;
+        var camera = Camera.main;
         if (!camera || !m_GunSource) {
             if (!camera) {
                 Debug.LogWarning("No camera found in Tentacle " + m_ArmNumber);
