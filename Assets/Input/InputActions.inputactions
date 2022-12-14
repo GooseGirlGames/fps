@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Shoot (Mouse)",
+                    "type": "Button",
+                    "id": "9f1bc243-9cd0-4542-b858-90bef03c268a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -164,6 +173,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Shoot8",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "473c197f-86fc-46d4-8048-4e76e687e5fe",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot (Mouse)",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

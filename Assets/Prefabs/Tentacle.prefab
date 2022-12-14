@@ -719,12 +719,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbd9609a8f757fa88e33e3336454e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShootAction: {fileID: 4751118552819131026, guid: 1ae3a765766535bf5b631336d6523f58,
+  m_ShootAction: {fileID: 4083684723909669127, guid: 1ae3a765766535bf5b631336d6523f58,
     type: 3}
   m_GunSource: {fileID: 1256969262918248119}
   m_GunStrength: 4
   m_FishBody: {fileID: 0}
   m_LineRend: {fileID: 4076113286745304437}
+  m_DebugText: {fileID: 0}
 --- !u!144 &9146372638067366623
 CharacterJoint:
   m_ObjectHideFlags: 0

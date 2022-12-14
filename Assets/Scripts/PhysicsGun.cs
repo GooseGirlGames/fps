@@ -27,6 +27,7 @@ public class PhysicsGun : MonoBehaviour {
     private Rigidbody m_Rigidbody;
     private int m_ArmNumber;
     private const float DISTANCE_THRES = 0.06f;
+    private bool m_InRange = false;
 
     public Vector3 ShootDirection {
         get => m_GunSource.forward;
@@ -67,7 +68,7 @@ public class PhysicsGun : MonoBehaviour {
     }
 
     private void ProcessInputs() {
-        if (m_ShootAction.action.WasPressedThisFrame()) {
+        if (m_ShootAction.action.WasPressedThisFrame() && m_InRange) {
             Shoot();
         }
     }
@@ -90,8 +91,8 @@ public class PhysicsGun : MonoBehaviour {
             }
         }
 
-        bool in_range = dist <= DISTANCE_THRES;
-        m_LineRendEnabled = in_range;
+        m_InRange = dist <= DISTANCE_THRES;
+        m_LineRendEnabled = m_InRange;
     }
 
     public void Shoot() {
