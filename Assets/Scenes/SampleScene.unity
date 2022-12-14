@@ -286,9 +286,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MouseSensitivity: 16.19
-  m_PitchMin: 12.1
-  m_PitchMax: 83
+  m_PitchMin: 5.4
+  m_PitchMax: 88.6
+  m_ZoomSpeed: 0.283
+  m_ZoomMin: 1.2
+  m_ZoomMax: 6.58
   m_LookAction: {fileID: -7621200309315075756, guid: 1ae3a765766535bf5b631336d6523f58,
+    type: 3}
+  m_EnableLookAction: {fileID: -4964008637948488939, guid: 1ae3a765766535bf5b631336d6523f58,
+    type: 3}
+  m_ZoomInAction: {fileID: -41166556677919179, guid: 1ae3a765766535bf5b631336d6523f58,
+    type: 3}
+  m_ZoomOutAction: {fileID: 6295593785592996632, guid: 1ae3a765766535bf5b631336d6523f58,
     type: 3}
   m_PlayerTransform: {fileID: 2089339090}
 --- !u!1 &796597731
@@ -1231,7 +1240,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7fe10970c3b9989c4b36c0dd51b22a5d, type: 2}
+      objectReference: {fileID: 2100000, guid: b4be8a4cf9ee35105b98408bef791fcb, type: 2}
     - target: {fileID: 6685759696553396950, guid: e6242e37543fd461ca03e4e49eaa5b3f,
         type: 3}
       propertyPath: m_Name
