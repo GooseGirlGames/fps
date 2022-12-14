@@ -8,19 +8,19 @@ public class MouseLook : MonoBehaviour {
     private float m_MouseSensitivity;
 
     [SerializeField]
-    [Range(0.0f, 360.0f)]
+    [Range(-360.0f, 360.0f)]
     private float m_PitchMin;
 
     [SerializeField]
-    [Range(0.0f, 360.0f)]
+    [Range(-360.0f, 360.0f)]
     private float m_PitchMax;
 
     [SerializeField]
-    [Range(0.01f, 1f)]
+    [Range(0.01f, 6f)]
     private float m_ZoomSpeed;
 
     [SerializeField]
-    [Range(0.1f, 5.0f)]
+    [Range(0.1f, 15.0f)]
     private float m_ZoomSpeedSmooth;
 
     [SerializeField]
@@ -45,7 +45,7 @@ public class MouseLook : MonoBehaviour {
     private float m_Zoom = 1f;
 
     void Start() {
-        m_Zoom = Mathf.Lerp(m_ZoomMin, m_ZoomMax, 0.7f);
+        m_Zoom = Mathf.Lerp(m_ZoomMin, m_ZoomMax, 0.5f);
         Zoom(0f);
     }
 

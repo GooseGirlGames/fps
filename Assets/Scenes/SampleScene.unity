@@ -287,12 +287,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MouseSensitivity: 16.19
-  m_PitchMin: 5.4
-  m_PitchMax: 88.6
-  m_ZoomSpeed: 0.283
+  m_PitchMin: -90
+  m_PitchMax: 90
+  m_ZoomSpeed: 2.11
   m_ZoomSpeedSmooth: 3.589
   m_ZoomMin: 1.2
-  m_ZoomMax: 6.58
+  m_ZoomMax: 18
   m_LookAction: {fileID: -7621200309315075756, guid: 1ae3a765766535bf5b631336d6523f58,
     type: 3}
   m_EnableLookAction: {fileID: -4964008637948488939, guid: 1ae3a765766535bf5b631336d6523f58,
