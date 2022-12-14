@@ -14,6 +14,7 @@ public class PhysicsGun : MonoBehaviour {
     private Transform m_GunSource;
 
     private float m_GunStrength = 30f;
+    private float m_MinUpwardsForce = 1f;
 
     [SerializeField]
     private Rigidbody m_FishBody;
@@ -120,6 +121,9 @@ public class PhysicsGun : MonoBehaviour {
     public void Shoot() {
         Debug.Log("Boom");
         var force = (-ShootDirection) * m_GunStrength;
+        if (force.y < m_MinUpwardsForce) {
+            force.y = m_MinUpwardsForce;
+        }
         m_Rigidbody.AddForce(force, ForceMode.Impulse);
         m_FishBody.AddForce(5f * force, ForceMode.Impulse);
     }
