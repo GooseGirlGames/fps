@@ -1,9 +1,11 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 
 public class PhysicsGun : MonoBehaviour {
+
+    [SerializeField]
+    private SkinnedMeshRenderer m_ArmRenderer;
 
     [SerializeField]
     private InputActionReference m_ShootAction;
@@ -21,6 +23,13 @@ public class PhysicsGun : MonoBehaviour {
 
     [SerializeField]
     private TMP_Text m_DebugText;
+
+    [SerializeField]
+    private Material m_HighlightMaterial;
+    [SerializeField]
+    private Material m_HighlightMaterialSecondary;
+    private Material m_RegularMaterial;
+    private Material m_RegularMaterialSecondary;
 
     private Rigidbody m_Rigidbody;
     private int m_ArmNumber;
@@ -44,11 +53,13 @@ public class PhysicsGun : MonoBehaviour {
         // var actionid_str = actionname[actionname.Length - 1];
         // m_ArmNumber = Int32.Parse("" + actionid_str);
         m_ArmNumber = ++ArmCount;
+        m_RegularMaterial = m_ArmRenderer.materials[0];
+        m_RegularMaterialSecondary = m_ArmRenderer.materials[1];
     }
 
     void Update() {
         ProcessInputs();
-        ProcessMouseInput();
+        //ProcessMouseInput();
 
         m_LineRend.enabled = m_LineRendEnabled;
         if (m_LineRendEnabled) {
@@ -74,7 +85,7 @@ public class PhysicsGun : MonoBehaviour {
         }
     }
 
-    private void ProcessMouseInput() {
+    private void deprecated_ProcessMouseInput() {
         var gun_pos = PositionInScreeenSpace();
         var mouse_pos = Mouse.current.position.ReadValue();
 
@@ -94,6 +105,16 @@ public class PhysicsGun : MonoBehaviour {
 
         m_InRange = dist <= DISTANCE_THRES;
         m_LineRendEnabled = m_InRange;
+    }
+
+    public void SetHighlighted(bool highlighted) {
+        m_InRange = highlighted;
+        var mat_prim = highlighted ? m_HighlightMaterial : m_RegularMaterial;
+        var mat_sec = highlighted ? m_HighlightMaterialSecondary : m_RegularMaterialSecondary;
+        var mats = m_ArmRenderer.materials;
+        mats[0] = mat_prim;
+        mats[1] = mat_sec;
+        m_ArmRenderer.materials = mats;
     }
 
     public void Shoot() {

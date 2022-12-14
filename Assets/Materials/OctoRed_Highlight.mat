@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OctoRed
+  m_Name: OctoRed_Highlight
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -113,9 +113,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.5584389, g: 0.012998374, b: 0.012998374, a: 1}
-    - _Color: {r: 0.5584389, g: 0.012998374, b: 0.012998374, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 0.84385824, g: 0.17576037, b: 0.69448084, a: 1}
+    - _Color: {r: 0.84385824, g: 0.17576033, b: 0.6944808, a: 1}
+    - _EmissionColor: {r: 0.7578583, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.72494334, g: 0.72494334, b: 0.72494334, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5773356216723313985

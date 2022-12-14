@@ -251,8 +251,9 @@ GameObject:
   m_Component:
   - component: {fileID: 636603978}
   - component: {fileID: 636603979}
+  - component: {fileID: 636603980}
   m_Layer: 0
-  m_Name: Camera Target
+  m_Name: Camera Target and Aim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,6 +290,7 @@ MonoBehaviour:
   m_PitchMin: 5.4
   m_PitchMax: 88.6
   m_ZoomSpeed: 0.283
+  m_ZoomSpeedSmooth: 3.589
   m_ZoomMin: 1.2
   m_ZoomMax: 6.58
   m_LookAction: {fileID: -7621200309315075756, guid: 1ae3a765766535bf5b631336d6523f58,
@@ -300,6 +302,21 @@ MonoBehaviour:
   m_ZoomOutAction: {fileID: 6295593785592996632, guid: 1ae3a765766535bf5b631336d6523f58,
     type: 3}
   m_PlayerTransform: {fileID: 2089339090}
+--- !u!114 &636603980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636603974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5abf12b484a3b7f49819a158b7bee1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TentacleLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &796597731
 GameObject:
   m_ObjectHideFlags: 3

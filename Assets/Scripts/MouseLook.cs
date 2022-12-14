@@ -16,8 +16,12 @@ public class MouseLook : MonoBehaviour {
     private float m_PitchMax;
 
     [SerializeField]
-    [Range(0.01f, 4.0f)]
+    [Range(0.01f, 1f)]
     private float m_ZoomSpeed;
+
+    [SerializeField]
+    [Range(0.1f, 5.0f)]
+    private float m_ZoomSpeedSmooth;
 
     [SerializeField]
     [Range(0.5f, 30.0f)]
@@ -40,7 +44,13 @@ public class MouseLook : MonoBehaviour {
     private float m_Yaw = 0f;
     private float m_Zoom = 1f;
 
+    void Start() {
+        m_Zoom = Mathf.Lerp(m_ZoomMin, m_ZoomMax, 0.7f);
+        Zoom(0f);
+    }
+
     void Update() {
+        UpdateZoom();
 
         transform.position = m_PlayerTransform.position;
 
@@ -63,6 +73,7 @@ public class MouseLook : MonoBehaviour {
         var rot_pitch = Quaternion.Euler(m_Pitch, 0, 0);
         var rot_yaw = Quaternion.Euler(0, m_Yaw, 0);
         transform.localRotation = rot_yaw * rot_pitch;
+
     }
 
     void ProcessMouseLook() {
@@ -76,12 +87,16 @@ public class MouseLook : MonoBehaviour {
     }
 
     void Zoom(float delta) {
-        Debug.Log("Zooming" + delta);
         m_Zoom += delta;
         m_Zoom = Mathf.Clamp(m_Zoom, m_ZoomMin, m_ZoomMax);
+    }
+
+    void UpdateZoom() {
         var vcam = GameManager.Instance.CMBrain.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>();
         var follow = vcam.GetCinemachineComponent<Cinemachine3rdPersonFollow>();
-        follow.CameraDistance = m_Zoom;
+        var delta_target = m_Zoom - follow.CameraDistance;
+        var delta = delta_target * Time.deltaTime * m_ZoomSpeedSmooth;
+        follow.CameraDistance += delta;
     }
 
 

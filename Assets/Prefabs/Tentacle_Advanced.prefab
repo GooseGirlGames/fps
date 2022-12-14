@@ -67,7 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7908039951848304737}
   - component: {fileID: 4663821734844443771}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BezierCurve.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 7926178191337491261}
   - component: {fileID: 7926178191337491259}
   - component: {fileID: 7926178191337491258}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 7926178191603858336}
   - component: {fileID: 7926178191603858350}
   - component: {fileID: 7926178191603858338}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 7926178193133971446}
   - component: {fileID: 7926178193133971444}
   - component: {fileID: 7926178193133971447}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -660,7 +660,7 @@ GameObject:
   - component: {fileID: 7926178193445425200}
   - component: {fileID: 1177263655418459972}
   - component: {fileID: 6374410348091056515}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -791,12 +791,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbd9609a8f757fa88e33e3336454e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ArmRenderer: {fileID: 4663821734844443771}
   m_ShootAction: {fileID: 4083684723909669127, guid: 1ae3a765766535bf5b631336d6523f58,
     type: 3}
   m_GunSource: {fileID: 5471498192359087980}
   m_FishBody: {fileID: 0}
   m_LineRend: {fileID: 1766480701061792284}
   m_DebugText: {fileID: 0}
+  m_HighlightMaterial: {fileID: 2100000, guid: 4211a4517fc7c13e8ae1b78f38022d90, type: 2}
+  m_HighlightMaterialSecondary: {fileID: 2100000, guid: 4211a4517fc7c13e8ae1b78f38022d90,
+    type: 2}
 --- !u!114 &6374410348091056515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -859,7 +863,7 @@ Transform:
   - {fileID: 1640749790526479561}
   - {fileID: 7908039951848304737}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8441843303895872486
 GameObject:
@@ -873,7 +877,7 @@ GameObject:
   - component: {fileID: 7926178192677070032}
   - component: {fileID: 7926178192677070046}
   - component: {fileID: 7926178192677070033}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
