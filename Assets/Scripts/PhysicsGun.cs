@@ -26,6 +26,7 @@ public class PhysicsGun : MonoBehaviour {
 
     private Rigidbody m_Rigidbody;
     private int m_ArmNumber;
+    private static int ArmCount = 0;
     private const float DISTANCE_THRES = 0.06f;
     private bool m_InRange = false;
 
@@ -41,9 +42,10 @@ public class PhysicsGun : MonoBehaviour {
 
     void Start() {
         m_Rigidbody = GetComponent<Rigidbody>();
-        var actionname = m_ShootAction.action.name;
-        var actionid_str = actionname[actionname.Length - 1];
-        m_ArmNumber = Int32.Parse("" + actionid_str);
+        // var actionname = m_ShootAction.action.name;
+        // var actionid_str = actionname[actionname.Length - 1];
+        // m_ArmNumber = Int32.Parse("" + actionid_str);
+        m_ArmNumber = ++ArmCount;
     }
 
     void Update() {
@@ -61,6 +63,7 @@ public class PhysicsGun : MonoBehaviour {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(m_GunSource.position, m_GunSource.position + 5f * ShootDirection);
     }
+
 
     private void UpdateLineRendererPositions(Vector3 origin, Vector3 destination) {
         m_LineRend.SetPosition(0, origin);
@@ -83,7 +86,7 @@ public class PhysicsGun : MonoBehaviour {
 
         var dist = Vector2.Distance(gun_pos, mouse_pos);
         if (m_ArmNumber == 1) {
-            var cam = Camera.main;
+            var cam = GameManager.Instance.CurrentCamera;
             Vector3 target = cam.ScreenToWorldPoint(new Vector3(mouse_pos.x, mouse_pos.y, 1));
             Debug.DrawLine(m_GunSource.position, target);
             if (m_DebugText) {
@@ -103,7 +106,7 @@ public class PhysicsGun : MonoBehaviour {
     }
 
     public Vector2 PositionInScreeenSpace() {
-        var camera = Camera.main;
+        var camera = GameManager.Instance.CurrentCamera;
         if (!camera || !m_GunSource) {
             if (!camera) {
                 Debug.LogWarning("No camera found in Tentacle " + m_ArmNumber);
