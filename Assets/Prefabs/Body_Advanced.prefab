@@ -234,6 +234,8 @@ GameObject:
   - component: {fileID: 5601214212036742930}
   - component: {fileID: 6570483098734121533}
   - component: {fileID: 3899953113994333395}
+  - component: {fileID: 3043611020175761223}
+  - component: {fileID: 5798278665009075490}
   m_Layer: 0
   m_Name: bone4.l
   m_TagString: Untagged
@@ -307,18 +309,18 @@ CharacterJoint:
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 7
+    limit: 2
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 9
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 9
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_EnableProjection: 1
@@ -351,6 +353,44 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.13
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &3043611020175761223
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2192981475991731835}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.16
+  m_Height: 1.16
+  m_Direction: 2
+  m_Center: {x: -2.5210723e-16, y: -0.13, z: -0.83}
+--- !u!138 &5798278665009075490
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2192981475991731835}
+  m_ConnectedBody: {fileID: 530281249625509870}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &2736666650677206972
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,18 +573,18 @@ CharacterJoint:
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 7
+    limit: 2
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 9
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 9
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_EnableProjection: 1
@@ -722,18 +762,18 @@ CharacterJoint:
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 7
+    limit: 2
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 9
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 9
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_EnableProjection: 1
@@ -777,7 +817,8 @@ GameObject:
   - component: {fileID: 1903010043195634263}
   - component: {fileID: 8478345662203298011}
   - component: {fileID: 1405266044037468625}
-  - component: {fileID: 793367400401698535}
+  - component: {fileID: 5266794502487913527}
+  - component: {fileID: 6530804774002246808}
   m_Layer: 0
   m_Name: bone2.l
   m_TagString: Untagged
@@ -851,18 +892,18 @@ CharacterJoint:
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 7
+    limit: 2
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 9
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 9
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_EnableProjection: 1
@@ -874,8 +915,23 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!135 &793367400401698535
-SphereCollider:
+--- !u!138 &5266794502487913527
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3883670375483901764}
+  m_ConnectedBody: {fileID: 2183786933345113093}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!136 &6530804774002246808
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -892,9 +948,11 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.13
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.11
+  m_Height: 0.97
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: -0.51}
 --- !u!1 &4236010199756665759
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,18 +1038,18 @@ CharacterJoint:
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 7
+    limit: 2
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 9
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 9
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_EnableProjection: 1
@@ -1023,7 +1081,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.13
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.19, z: -0.47}
 --- !u!1 &4761806229578426016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,18 +1286,18 @@ CharacterJoint:
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 7
+    limit: 2
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 9
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 9
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_EnableProjection: 1
@@ -1271,7 +1329,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.13
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.19, z: -0.47}
 --- !u!1 &5526355308104658958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,7 +1341,9 @@ GameObject:
   - component: {fileID: 7776942939555616322}
   - component: {fileID: 279979411405855899}
   - component: {fileID: 152635045449200855}
-  - component: {fileID: 576474482058228132}
+  - component: {fileID: 8491700274958079360}
+  - component: {fileID: 135942433019801222}
+  - component: {fileID: 1249175559773958195}
   m_Layer: 0
   m_Name: ROOT
   m_TagString: Untagged
@@ -1369,8 +1429,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &576474482058228132
-SphereCollider:
+--- !u!65 &8491700274958079360
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1388,8 +1448,38 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.13
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.90344, y: 0.07686128, z: 0.805303}
+  m_Center: {x: -0.032003522, y: 0.05247789, z: -0.5545264}
+--- !u!138 &135942433019801222
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526355308104658958}
+  m_ConnectedBody: {fileID: 5009170688909369621}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!138 &1249175559773958195
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526355308104658958}
+  m_ConnectedBody: {fileID: 822603178496316998}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &6126055429857998068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1476,18 +1566,18 @@ CharacterJoint:
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 7
+    limit: 2
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 9
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 9
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_EnableProjection: 1
@@ -1776,7 +1866,7 @@ GameObject:
   - component: {fileID: 2227994418249591124}
   - component: {fileID: 2183786933345113093}
   - component: {fileID: 6626213163604778403}
-  - component: {fileID: 8463463351759578138}
+  - component: {fileID: 3893270628116986858}
   m_Layer: 0
   m_Name: bone2.r
   m_TagString: Untagged
@@ -1850,18 +1940,18 @@ CharacterJoint:
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 7
+    limit: 2
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 9
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 9
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_EnableProjection: 1
@@ -1873,8 +1963,8 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!135 &8463463351759578138
-SphereCollider:
+--- !u!136 &3893270628116986858
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1891,9 +1981,11 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.13
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.11
+  m_Height: 0.97
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: -0.51}
 --- !u!1 &8756364012192531905
 GameObject:
   m_ObjectHideFlags: 0
