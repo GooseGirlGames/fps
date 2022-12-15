@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
 
     public CinemachineBrain CMBrain = null;
     public Camera CurrentCamera = null;
+    public Respawn Respawn;
 
     void Awake() {
         if (Instance == null) {

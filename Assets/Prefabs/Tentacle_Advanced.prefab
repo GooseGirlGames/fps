@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7926178192655015164}
   m_Layer: 0
   m_Name: Armature
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 4663821734844443771}
   m_Layer: 6
   m_Name: BezierCurve.001
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 7926178191337491258}
   m_Layer: 7
   m_Name: Bone.002
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 7926178191603858338}
   m_Layer: 7
   m_Name: Bone
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 7926178193133971447}
   m_Layer: 7
   m_Name: Bone.003
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 6374410348091056515}
   m_Layer: 7
   m_Name: Bone.004
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -708,7 +708,7 @@ GameObject:
   - component: {fileID: 7671257920353029207}
   m_Layer: 0
   m_Name: Tentacle_Advanced
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -744,7 +744,7 @@ GameObject:
   - component: {fileID: 7926178192677070033}
   m_Layer: 7
   m_Name: Bone.001
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -870,10 +870,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5008911043675066423}
     m_Modifications:
+    - target: {fileID: 1740300507288923202, guid: 920b8f3beab6b9b3abc00744388a491b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3317422064624926106, guid: 920b8f3beab6b9b3abc00744388a491b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3640083168435408670, guid: 920b8f3beab6b9b3abc00744388a491b,
         type: 3}
       propertyPath: m_Name
       value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640083168435408670, guid: 920b8f3beab6b9b3abc00744388a491b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669200545507190626, guid: 920b8f3beab6b9b3abc00744388a491b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4165826320641086884, guid: 920b8f3beab6b9b3abc00744388a491b,
         type: 3}
@@ -929,6 +949,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924408097030709458, guid: 920b8f3beab6b9b3abc00744388a491b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5628795303397057425, guid: 920b8f3beab6b9b3abc00744388a491b,
         type: 3}

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6091414332749043616}
   - component: {fileID: 6091414332749043631}
+  - component: {fileID: 9185490900149229196}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6091414332749043631
 MonoBehaviour:
@@ -44,3 +45,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a25b52418af79ecd9f5bd3b18acad87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CMBrain: {fileID: 0}
+  CurrentCamera: {fileID: 0}
+  Respawn: {fileID: 9185490900149229196}
+--- !u!114 &9185490900149229196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6091414332749043630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63817d5e772e3cb0c963b8f64bc1295e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Level1:
+    m_Handle: 0
