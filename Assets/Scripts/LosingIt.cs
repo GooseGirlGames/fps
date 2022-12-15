@@ -26,7 +26,6 @@ public class LosingIt : MonoBehaviour {
     public IEnumerator CheckLostCoroutine() {
         while (true) {
             var l = Lostness();
-            DebugText.text = "Lost: " + l;
             if (l >= LOSING_IT_THRESHOLD) {
                 WeAreLosingIt();
             }

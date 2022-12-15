@@ -144,8 +144,6 @@ GameObject:
   - component: {fileID: 6967630969100813766}
   - component: {fileID: 3933473786128707440}
   - component: {fileID: 334971802429331379}
-  - component: {fileID: 6884332133096113079}
-  - component: {fileID: 1867348616529318957}
   m_Layer: 7
   m_Name: Bone.004
   m_TagString: Untagged
@@ -264,60 +262,6 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &6884332133096113079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425980504178422736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fbd9609a8f757fa88e33e3336454e56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ArmRenderer: {fileID: 9096473743536043753}
-  m_ShootAction: {fileID: 4083684723909669127, guid: 1ae3a765766535bf5b631336d6523f58,
-    type: 3}
-  m_MuzzleFlash: {fileID: 0}
-  m_GunSource: {fileID: 0}
-  m_FishBody: {fileID: 0}
-  m_LineRend: {fileID: 0}
-  m_DebugText: {fileID: 0}
-  m_HighlightMaterial: {fileID: 2100000, guid: 4211a4517fc7c13e8ae1b78f38022d90, type: 2}
-  m_HighlightMaterialSecondary: {fileID: 2100000, guid: 4211a4517fc7c13e8ae1b78f38022d90,
-    type: 2}
---- !u!114 &1867348616529318957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425980504178422736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 1ae3a765766535bf5b631336d6523f58,
-    type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &2389469346379797521
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,7 +424,7 @@ Transform:
   - {fileID: 8766665119471173764}
   - {fileID: 4096107576587291241}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5950874498266570021
 GameObject:
