@@ -12,6 +12,9 @@ public class PhysicsGun : MonoBehaviour {
     private InputActionReference m_ShootAction;
 
     [SerializeField]
+    private MuzzleFlash m_MuzzleFlash;
+
+    [SerializeField]
     private Transform m_GunSource;
 
     private float m_GunStrength = 30f;
@@ -70,7 +73,7 @@ public class PhysicsGun : MonoBehaviour {
         m_LineRend.enabled = m_LineRendEnabled;
         if (m_LineRendEnabled) {
             var line_length = 20f;
-            UpdateLineRendererPositions(transform.position, transform.position + (line_length * ShootDirection));
+            UpdateLineRendererPositions(m_GunSource.position, m_GunSource.position + (line_length * ShootDirection));
         }
     }
 
@@ -126,6 +129,7 @@ public class PhysicsGun : MonoBehaviour {
 
     public void Shoot() {
         Debug.Log("Boom");
+        m_MuzzleFlash.Trigger();
         var force = (-ShootDirection) * m_GunStrength;
         if (force.y < m_MinUpwardsForce) {
             force.y = m_MinUpwardsForce;

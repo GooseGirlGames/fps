@@ -658,6 +658,7 @@ MonoBehaviour:
   m_ArmRenderer: {fileID: 4663821734844443771}
   m_ShootAction: {fileID: 4083684723909669127, guid: 1ae3a765766535bf5b631336d6523f58,
     type: 3}
+  m_MuzzleFlash: {fileID: 7317560240652412839}
   m_GunSource: {fileID: 3047822495989051843}
   m_FishBody: {fileID: 0}
   m_LineRend: {fileID: 1346613300761710045}
@@ -727,7 +728,7 @@ Transform:
   - {fileID: 1640749790526479561}
   - {fileID: 7908039951848304737}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8441843303895872486
 GameObject:
@@ -1027,7 +1028,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c5b13bb77d036aed3ab615cbedd505eb, type: 2}
+  - {fileID: 2100000, guid: 6e234bbc1b35910708f338b92edd48d3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1116,3 +1117,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7228688516325134930}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7317560240652412839 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 134060896348190197, guid: 920b8f3beab6b9b3abc00744388a491b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7228688516325134930}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2a4f8451d3ddfb39ea94e643b26914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
