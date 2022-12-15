@@ -121,6 +121,7 @@ public class PhysicsGun : MonoBehaviour {
         mats[0] = mat_prim;
         mats[1] = mat_sec;
         m_ArmRenderer.materials = mats;
+        m_LineRendEnabled = highlighted;
     }
 
     public void Shoot() {
