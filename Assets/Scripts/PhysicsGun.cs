@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
@@ -14,10 +15,11 @@ public class PhysicsGun : MonoBehaviour {
     private Transform m_GunSource;
 
     private float m_GunStrength = 30f;
-    private float m_MinUpwardsForce = 1f;
+    private float m_MinUpwardsForce = 2f;
 
     [SerializeField]
     private Rigidbody m_FishBody;
+    private List<Rigidbody> m_FishBodyRigidbodies;
 
     [SerializeField]
     private LineRenderer m_LineRend;
@@ -56,6 +58,9 @@ public class PhysicsGun : MonoBehaviour {
         m_ArmNumber = ++ArmCount;
         m_RegularMaterial = m_ArmRenderer.materials[0];
         m_RegularMaterialSecondary = m_ArmRenderer.materials[1];
+
+        var rbs = m_FishBody.transform.parent.GetComponentsInChildren<Rigidbody>();
+        m_FishBodyRigidbodies = new List<Rigidbody>(rbs);
     }
 
     void Update() {
@@ -125,7 +130,12 @@ public class PhysicsGun : MonoBehaviour {
             force.y = m_MinUpwardsForce;
         }
         m_Rigidbody.AddForce(force, ForceMode.Impulse);
-        m_FishBody.AddForce(5f * force, ForceMode.Impulse);
+
+        var body_force_factor = 5f;
+        float n = m_FishBodyRigidbodies.Count;
+        foreach (var rb in m_FishBodyRigidbodies) {
+            rb.AddForce(body_force_factor * force / n, ForceMode.Impulse);
+        }
     }
 
     public Vector2 PositionInScreeenSpace() {
