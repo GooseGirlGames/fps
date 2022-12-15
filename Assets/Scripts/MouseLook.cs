@@ -96,7 +96,7 @@ public class MouseLook : MonoBehaviour {
         var vcam = GameManager.Instance.CMBrain.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>();
         var follow = vcam.GetCinemachineComponent<Cinemachine3rdPersonFollow>();
         var delta_target = m_Zoom - follow.CameraDistance;
-        var delta = delta_target * Time.deltaTime * m_ZoomSpeedSmooth;
+        var delta = delta_target * Time.deltaTime * m_ZoomSpeedSmooth / Time.timeScale;
         follow.CameraDistance += delta;
     }
 

@@ -338,6 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TimeSlowAction: {fileID: -7421815003629157322, guid: 1ae3a765766535bf5b631336d6523f58,
     type: 3}
+  DebugText: {fileID: 1739369084}
 --- !u!1 &796597731
 GameObject:
   m_ObjectHideFlags: 3
