@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro;
 
 public class Slowmo : MonoBehaviour {
     [SerializeField]
@@ -10,8 +9,6 @@ public class Slowmo : MonoBehaviour {
     private float m_TargetTimeScale = 1.0f;
     private float m_SmoothSpeed = 12f;
     public const float EPSILON = 0.005f;
-
-    public TMP_Text DebugText;
 
     void Update() {
         bool slow = m_TimeSlowAction.action.IsPressed();
@@ -24,6 +21,6 @@ public class Slowmo : MonoBehaviour {
             Time.timeScale = m_TargetTimeScale;
         }
 
-        DebugText.text = "Timescale: " + Time.timeScale;
+        // DebugText.text = "Timescale: " + Time.timeScale;
     }
 }

@@ -259,8 +259,9 @@ GameObject:
   - component: {fileID: 636603979}
   - component: {fileID: 636603980}
   - component: {fileID: 636603981}
+  - component: {fileID: 636603982}
   m_Layer: 0
-  m_Name: Camera Target and Aim and Slowmo
+  m_Name: Camera Target and Aim and Slowmo and Losing It
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -338,6 +339,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TimeSlowAction: {fileID: -7421815003629157322, guid: 1ae3a765766535bf5b631336d6523f58,
     type: 3}
+--- !u!114 &636603982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636603974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ede9ef32417bb30844ac2a52cadf2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   DebugText: {fileID: 1739369084}
 --- !u!1 &796597731
 GameObject:

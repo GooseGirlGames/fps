@@ -53,7 +53,6 @@ public class MouseLook : MonoBehaviour {
         UpdateZoom();
 
         transform.position = m_PlayerTransform.position;
-        Debug.Log(m_PlayerTransform.position);
 
         bool move_enabled = m_EnableLookAction.action.IsPressed();
         if (move_enabled) {
