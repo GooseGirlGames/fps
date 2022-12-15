@@ -78,7 +78,7 @@ public class MouseLook : MonoBehaviour {
     }
 
     void ProcessMouseLook() {
-        var factor = Time.deltaTime * m_MouseSensitivity;
+        var factor = Time.deltaTime * m_MouseSensitivity / Time.timeScale;
         var lookdelta = m_LookAction.action.ReadValue<Vector2>();
         var delta_yaw = lookdelta.x * factor;
         var delta_pitch = lookdelta.y * factor;

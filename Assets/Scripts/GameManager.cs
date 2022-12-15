@@ -17,6 +17,12 @@ public class GameManager : MonoBehaviour {
         DontDestroyOnLoad(this);
     }
 
+    void Start() {
+        foreach (var rb in FindObjectsOfType<Rigidbody>()) {
+            rb.interpolation = RigidbodyInterpolation.Interpolate;
+        }
+    }
+
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         SetupCameraStuff();
     }
