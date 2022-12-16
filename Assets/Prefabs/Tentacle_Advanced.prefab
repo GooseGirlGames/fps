@@ -660,6 +660,8 @@ MonoBehaviour:
   m_ArmRenderer: {fileID: 4663821734844443771}
   m_ShootAction: {fileID: 4083684723909669127, guid: 1ae3a765766535bf5b631336d6523f58,
     type: 3}
+  m_MachineGunAction: {fileID: 3272375634074850184, guid: 1ae3a765766535bf5b631336d6523f58,
+    type: 3}
   m_MuzzleFlash: {fileID: 7317560240652412839}
   m_GunSource: {fileID: 3047822495989051843}
   m_FishBody: {fileID: 0}
@@ -845,7 +847,7 @@ Transform:
   - {fileID: 1640749790526479561}
   - {fileID: 7908039951848304737}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8441843303895872486
 GameObject:

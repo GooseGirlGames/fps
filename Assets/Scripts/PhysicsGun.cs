@@ -12,6 +12,9 @@ public class PhysicsGun : MonoBehaviour {
     private InputActionReference m_ShootAction;
 
     [SerializeField]
+    private InputActionReference m_MachineGunAction;
+
+    [SerializeField]
     private MuzzleFlash m_MuzzleFlash;
 
     [SerializeField]
@@ -68,6 +71,16 @@ public class PhysicsGun : MonoBehaviour {
 
         var rbs = m_FishBody.transform.parent.GetComponentsInChildren<Rigidbody>();
         m_FishBodyRigidbodies = new List<Rigidbody>(rbs);
+    }
+
+    void FixedUpdate() {
+        if (m_MachineGunAction.action.IsPressed()) {
+            float t = Time.time * 10f;
+            t -= (int)t;
+            if ((10f * t) % 10 == (m_ArmNumber % 10)) {
+                Shoot();
+            }
+        }
     }
 
     void Update() {
