@@ -31,11 +31,15 @@ public class PhysicsGun : MonoBehaviour {
     private TMP_Text m_DebugText;
 
     [SerializeField]
+    private AudioSource m_GunshotAudio;
+
+    [SerializeField]
     private Material m_HighlightMaterial;
     [SerializeField]
     private Material m_HighlightMaterialSecondary;
     private Material m_RegularMaterial;
     private Material m_RegularMaterialSecondary;
+
 
     private Rigidbody m_Rigidbody;
     private int m_ArmNumber;
@@ -128,7 +132,7 @@ public class PhysicsGun : MonoBehaviour {
     }
 
     public void Shoot() {
-        Debug.Log("Boom");
+        m_GunshotAudio.PlayOneShot(m_GunshotAudio.clip);
         m_MuzzleFlash.Trigger();
         var force = (-ShootDirection) * m_GunStrength;
         if (force.y < m_MinUpwardsForce) {

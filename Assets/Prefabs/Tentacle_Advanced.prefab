@@ -663,6 +663,7 @@ MonoBehaviour:
   m_FishBody: {fileID: 0}
   m_LineRend: {fileID: 1346613300761710045}
   m_DebugText: {fileID: 0}
+  m_GunshotAudio: {fileID: 1570642444375736289}
   m_HighlightMaterial: {fileID: 2100000, guid: 4211a4517fc7c13e8ae1b78f38022d90, type: 2}
   m_HighlightMaterialSecondary: {fileID: 2100000, guid: 4211a4517fc7c13e8ae1b78f38022d90,
     type: 2}
@@ -1020,6 +1021,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1346613300761710045}
   m_SourcePrefab: {fileID: 100100000, guid: 920b8f3beab6b9b3abc00744388a491b, type: 3}
+--- !u!82 &1570642444375736289 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8186839418312322483, guid: 920b8f3beab6b9b3abc00744388a491b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7228688516325134930}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3047822495989051843 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5628795303397057425, guid: 920b8f3beab6b9b3abc00744388a491b,
