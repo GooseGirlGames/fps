@@ -32,7 +32,7 @@ public class Slowmo : MonoBehaviour {
         m_SlowSource.volume = Mathf.Abs(delta) > EPSILON ? 1f : 0f;
 
         if (Mathf.Abs(Time.timeScale - m_TargetTimeScale) <= EPSILON) {
-            Time.timeScale = m_TargetTimeScale;
+            Time.timeScale = Mathf.Clamp01(m_TargetTimeScale);
         }
 
         foreach (var source in m_AudioSources) {
