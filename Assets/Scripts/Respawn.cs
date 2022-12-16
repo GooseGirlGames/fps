@@ -1,26 +1,22 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class Respawn : MonoBehaviour {
-
-    [SerializeField]
-    private Scene m_Level1;
-
-    private int m_CurrentLevel = 1;
+    public InputActionReference m_RespawnAction;
 
     void Awake() {
-        DontDestroyOnLoad(this);
+        // DontDestroyOnLoad(this);
     }
 
-    public void LoadLevel(int level) {
-        if (level == 1) {
-            SceneManager.LoadScene(m_Level1.name);
+    void Upate() {
+        if (m_RespawnAction.action.WasPressedThisFrame()) {
+            RestartLevel();
         }
-        m_CurrentLevel = level;
     }
 
     public void RestartLevel() {
-        Debug.Log("RestartLevel");
-        LoadLevel(m_CurrentLevel);
+        var scene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(scene);
     }
 }

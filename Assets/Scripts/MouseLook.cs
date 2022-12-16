@@ -50,7 +50,9 @@ public class MouseLook : MonoBehaviour {
     }
 
     void Update() {
-        UpdateZoom();
+        try {
+            UpdateZoom();
+        } catch {}
 
         transform.position = m_PlayerTransform.position;
 

@@ -60,5 +60,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63817d5e772e3cb0c963b8f64bc1295e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Level1:
-    m_Handle: 0
+  m_RespawnAction: {fileID: 3042199384278247880, guid: 1ae3a765766535bf5b631336d6523f58,
+    type: 3}
