@@ -36,12 +36,17 @@ public class Slowmo : MonoBehaviour {
         }
 
         foreach (var source in m_AudioSources) {
+            float pitch;
             if (source == m_SlowSource) {
                 float t = (Time.timeScale - m_SlowSpeed) / (1f - m_SlowSpeed);
-                source.pitch = Mathf.Lerp(2 * m_SlowSpeed, 1f, t);
+                pitch = Mathf.Lerp(2 * m_SlowSpeed, 1f, t);
             } else {
-                source.pitch = Time.timeScale;
+                pitch = Time.timeScale;
             }
+            if (pitch < 0) {
+                pitch = 0;
+            }
+            source.pitch = pitch;
         }
 
         m_Slow = slow;
