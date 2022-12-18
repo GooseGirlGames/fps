@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// sorry about the typo, too lazy to fix :(
 public class MoveingPlatform : MonoBehaviour {
 
     private List<Collider> m_CollidersInside = new List<Collider>();
@@ -10,18 +11,23 @@ public class MoveingPlatform : MonoBehaviour {
     private bool m_Move = false;
     private Vector3 m_StartPos;
 
+    [SerializeField]
+    private Transform m_Origin;  // transform to move around
+
     void Awake() {
         m_StartPos = transform.position;
     }
 
     void Update() {
         if (m_Move) {
-            transform.position += Vector3.up * 1f * Time.deltaTime;
+            var phi = -3f * Time.deltaTime;
+            var rot = Quaternion.Euler(0, phi, 0);
+            m_Origin.rotation *= rot;
         }
     }
 
     IEnumerator StartMovingCoroutine() {
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1f);
         m_Move = true;
     }
 
