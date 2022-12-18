@@ -71,6 +71,15 @@ public class PhysicsGun : MonoBehaviour {
 
         var rbs = m_FishBody.transform.parent.GetComponentsInChildren<Rigidbody>();
         m_FishBodyRigidbodies = new List<Rigidbody>(rbs);
+
+        // Setup GameManger's PlayerObject
+        if (GameManager.Instance.PlayerObject == null) {
+            var go = this.gameObject;
+            while (go.transform.parent != null) {
+                go = go.transform.parent.gameObject;
+            }
+            GameManager.Instance.PlayerObject = go;
+        }
     }
 
     void FixedUpdate() {

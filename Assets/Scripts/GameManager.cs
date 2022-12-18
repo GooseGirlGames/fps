@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour {
     public Camera CurrentCamera = null;
     public Respawn Respawn;
 
+    [HideInInspector]
+    public GameObject PlayerObject = null;
+
     void Awake() {
         if (Instance == null) {
             Instance = this;
