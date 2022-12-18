@@ -80,6 +80,9 @@ public class PhysicsGun : MonoBehaviour {
             }
             GameManager.Instance.PlayerObject = go;
         }
+        if (GameManager.Instance.PlayerRootRigidbody == null && m_FishBody != null) {
+            GameManager.Instance.PlayerRootRigidbody = m_FishBody;
+        }
     }
 
     void FixedUpdate() {
@@ -156,6 +159,9 @@ public class PhysicsGun : MonoBehaviour {
     public void Shoot() {
         m_GunshotAudio.PlayOneShot(m_GunshotAudio.clip);
         m_MuzzleFlash.Trigger();
+
+        ForceField.DisableAllForSeconds(1.5f);
+
         var force = (-ShootDirection) * m_GunStrength;
         if (force.y < m_MinUpwardsForce) {
             force.y = m_MinUpwardsForce;

@@ -63,9 +63,9 @@ public class MoveingPlatform : MonoBehaviour {
     }
 
     void Reparent(bool enter) {
-        var player = GameManager.Instance.PlayerObject.transform;
-        var parent = enter ? this.transform : null;
-        player.SetParent(parent, worldPositionStays: true);
+        // var player = GameManager.Instance.PlayerObject.transform;
+        // var parent = enter ? this.transform : null;
+        // player.SetParent(parent, worldPositionStays: true);
         m_PlayerIsParented = enter;
     }
 }

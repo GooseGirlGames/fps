@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour {
 
     [HideInInspector]
     public GameObject PlayerObject = null;
+    [HideInInspector]
+    public Rigidbody PlayerRootRigidbody = null;
 
     void Awake() {
         if (Instance == null) {
