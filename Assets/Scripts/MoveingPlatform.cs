@@ -10,12 +10,19 @@ public class MoveingPlatform : MonoBehaviour {
 
     private bool m_Move = false;
     private Vector3 m_StartPos;
+    private Quaternion m_StartRot;
 
     [SerializeField]
     private Transform m_Origin;  // transform to move around
 
     void Awake() {
-        m_StartPos = transform.position;
+        m_StartPos = m_Origin.position;
+        m_StartRot = m_Origin.rotation;
+    }
+
+    void ResetPositon() {
+        m_Origin.position = m_StartPos;
+        m_Origin.rotation = m_StartRot;
     }
 
     void Update() {
@@ -58,7 +65,7 @@ public class MoveingPlatform : MonoBehaviour {
             Reparent(enter: false);
             StopAllCoroutines();
             m_Move = false;
-            transform.position = m_StartPos;
+            ResetPositon();
         }
     }
 
