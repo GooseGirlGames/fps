@@ -18,7 +18,6 @@ public class LevelBounds : MonoBehaviour {
     }
 
     public void OnTriggerExit(Collider other) {
-        Debug.Log("Exit " + other.gameObject.name);
         if (!m_IsReloading && (other.gameObject.CompareTag("Player"))) {
             m_IsReloading = true;
             GameManager.Instance.Respawn.RestartLevel();
