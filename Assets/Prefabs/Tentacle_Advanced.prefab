@@ -847,7 +847,7 @@ Transform:
   - {fileID: 1640749790526479561}
   - {fileID: 7908039951848304737}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8441843303895872486
 GameObject:
@@ -1003,6 +1003,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640083168435408670, guid: 920b8f3beab6b9b3abc00744388a491b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3640083168435408670, guid: 920b8f3beab6b9b3abc00744388a491b,
         type: 3}

@@ -33,6 +33,17 @@ public class TentacleSelect : MonoBehaviour {
         }
         var go = hit.collider.gameObject;
         var gun = go.GetComponentInChildren<PhysicsGun>();
-        return gun;
+
+        if (gun) {
+            return gun;
+        }
+
+        // Allow clicking on the gun model
+        var parent = go.transform.parent;
+        if (parent) {
+            return parent.GetComponent<PhysicsGun>();
+        }
+
+        return null;
     }
 }
