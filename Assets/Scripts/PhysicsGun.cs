@@ -21,7 +21,7 @@ public class PhysicsGun : MonoBehaviour {
     private Transform m_GunSource;
 
     private float m_GunStrength = 60f;
-    private float m_MinUpwardsForce = 2f;
+    private float m_MinUpwardsForce = 10f;
 
     [SerializeField]
     private Rigidbody m_FishBody;

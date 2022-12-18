@@ -5,8 +5,10 @@ public class Squish : MonoBehaviour {
     [SerializeField]
     private List<AudioClip> m_SquishSounds = new List<AudioClip>();
 
+    [SerializeField]
     private float m_Cooldown = 3f;
 
+    [SerializeField]
     private float m_Chance = 0.6f;
 
     private float m_LastPlayed = 0;

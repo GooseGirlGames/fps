@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 812919df3d76ecaadbe69db5f96968ec,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 812919df3d76ecaadbe69db5f96968ec,
         type: 3}
@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 812919df3d76ecaadbe69db5f96968ec,
         type: 3}
       propertyPath: m_Name
-      value: BowlingPin
+      value: BowlingPin Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -84,6 +84,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 637465755}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 812919df3d76ecaadbe69db5f96968ec,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4385487547139949336}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 812919df3d76ecaadbe69db5f96968ec,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6671495620867749171}
   m_SourcePrefab: {fileID: 100100000, guid: 812919df3d76ecaadbe69db5f96968ec, type: 3}
 --- !u!1 &7140918650738838952 stripped
 GameObject:
@@ -162,3 +170,115 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.04516983, y: 0.038180128, z: 0.05128002}
   m_Center: {x: -0.0014052019, y: -0.097627096, z: 0.00136666}
+--- !u!82 &4385487547139949336
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7140918650738838952}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &6671495620867749171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7140918650738838952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2041ae57244861aeaa21ded98e312e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SquishSounds:
+  - {fileID: 8300000, guid: bf0421e76742fdd95bd1dd0a78d145fa, type: 3}
+  m_Cooldown: 2
+  m_Chance: 1
