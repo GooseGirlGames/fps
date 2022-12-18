@@ -13,6 +13,9 @@ public class Squish : MonoBehaviour {
 
     private float m_LastPlayed = 0;
 
+    [SerializeField]
+    private bool m_CooldownOnLevelLoad = false;
+
     void Awake() {
         m_Source = GetComponent<AudioSource>();
     }
@@ -26,6 +29,10 @@ public class Squish : MonoBehaviour {
     }
 
     public void PlaySquish() {
+        if (m_CooldownOnLevelLoad && Time.timeSinceLevelLoad <= m_Cooldown) {
+            return;
+        }
+
         if (m_Source.isPlaying) {
             return;
         }

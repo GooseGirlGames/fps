@@ -282,3 +282,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bf0421e76742fdd95bd1dd0a78d145fa, type: 3}
   m_Cooldown: 2
   m_Chance: 1
+  m_CooldownOnLevelLoad: 1
