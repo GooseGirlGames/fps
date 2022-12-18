@@ -13,8 +13,11 @@ public class ForceField : MonoBehaviour {
 
     private bool m_ForceEnabled = true;
 
-    void Start() {
+    void OnEnable() {
         s_Fields.Add(this);
+    }
+    void OnDisable() {
+        s_Fields.Remove(this);
     }
 
     public static void DisableAllForSeconds(float secs) {
