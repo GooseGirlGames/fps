@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MoveingPlatform : MonoBehaviour {
 
@@ -10,14 +11,27 @@ public class MoveingPlatform : MonoBehaviour {
     private bool m_Move = false;
     private Vector3 m_StartPos;
 
+    [SerializeField]
+    private Joint m_Joint;
+
+    [SerializeField]
+    private TMP_Text m_DebugText;
+
+    private float m_MaxForce = 0f;
+
     void Awake() {
         m_StartPos = transform.position;
     }
 
     void Update() {
         if (m_Move) {
-            transform.position += Vector3.up * 1f * Time.deltaTime;
+            // transform.position += Vector3.up * 1f * Time.deltaTime;
         }
+        if (m_DebugText) {
+            m_DebugText.text = "Force: " + m_Joint.currentForce.magnitude + "\n"
+                + "Max: " + m_MaxForce;
+        }
+        m_MaxForce = Mathf.Max(m_MaxForce, m_Joint.currentForce.magnitude);
     }
 
     IEnumerator StartMovingCoroutine() {
@@ -57,9 +71,9 @@ public class MoveingPlatform : MonoBehaviour {
     }
 
     void Reparent(bool enter) {
-        var player = GameManager.Instance.PlayerObject.transform;
-        var parent = enter ? this.transform : null;
-        player.SetParent(parent, worldPositionStays: true);
+        var player = GameManager.Instance.PlayerRootRigidbody;
+        var connected = enter ? player : null;
+        m_Joint.connectedBody = connected;
         m_PlayerIsParented = enter;
     }
 }

@@ -80,6 +80,9 @@ public class PhysicsGun : MonoBehaviour {
             }
             GameManager.Instance.PlayerObject = go;
         }
+        if (GameManager.Instance.PlayerRootRigidbody == null && m_FishBody != null) {
+            GameManager.Instance.PlayerRootRigidbody = m_FishBody;
+        }
     }
 
     void FixedUpdate() {
