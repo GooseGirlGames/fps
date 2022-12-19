@@ -62,6 +62,7 @@ public class PhysicsGun : MonoBehaviour {
 
     void OnEnable() {
         ArmCount = 0;
+        SetupPlayerObject();
     }
 
     void Start() {
@@ -76,6 +77,10 @@ public class PhysicsGun : MonoBehaviour {
         var rbs = m_FishBody.transform.parent.GetComponentsInChildren<Rigidbody>();
         m_FishBodyRigidbodies = new List<Rigidbody>(rbs);
 
+        SetupPlayerObject();
+    }
+
+    void SetupPlayerObject() {
         // Setup GameManger's PlayerObject
         if (GameManager.Instance.PlayerObject == null) {
             var go = this.gameObject;

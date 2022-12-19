@@ -1,18 +1,23 @@
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour {
     public static GameManager Instance = null;
 
     public CinemachineBrain CMBrain = null;
     public Camera CurrentCamera = null;
-    public Respawn Respawn;
+    public Respawn Respawner;
+
+    [SerializeField]
+    private TMP_Text m_DebugText;
 
     [HideInInspector]
     public GameObject PlayerObject = null;
     [HideInInspector]
     public Rigidbody PlayerRootRigidbody = null;
+
 
     void Awake() {
         if (Instance == null) {
@@ -20,7 +25,7 @@ public class GameManager : MonoBehaviour {
         } else {
             Destroy(this.gameObject);
         }
-        // DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this);
     }
 
     void SetupRigidbodies() {
@@ -30,7 +35,17 @@ public class GameManager : MonoBehaviour {
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        SetupRigidbodies();
         SetupCameraStuff();
+        Debug.Log("Scene Loaded, Respawn is " + Respawner);
+        if (!Respawner) {
+            Respawner = GetComponent<Respawn>();
+        }
+        if (Respawner) {
+            Respawner.SetPlayerToSpawnLocation();
+        } else {
+            Debug.LogWarning("Scene loaded but no Respawn object found");
+        }
     }
 
     public void SetupCameraStuff() {
@@ -43,8 +58,13 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    void Update() {
+        if (m_DebugText != null) {
+            m_DebugText.text = $"{PlayerObject}";
+        }
+    }
+
     void OnEnable() {
-        Awake(); // hope this won't break anything D:
         SetupCameraStuff();
         SetupRigidbodies();
         SceneManager.sceneLoaded += OnSceneLoaded;
