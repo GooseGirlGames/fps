@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour {
         // DontDestroyOnLoad(this);
     }
 
-    void Start() {
+    void SetupRigidbodies() {
         foreach (var rb in FindObjectsOfType<Rigidbody>()) {
             rb.interpolation = RigidbodyInterpolation.Interpolate;
         }
@@ -44,7 +44,9 @@ public class GameManager : MonoBehaviour {
     }
 
     void OnEnable() {
+        Awake(); // hope this won't break anything D:
         SetupCameraStuff();
+        SetupRigidbodies();
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 

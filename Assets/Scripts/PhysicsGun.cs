@@ -60,6 +60,10 @@ public class PhysicsGun : MonoBehaviour {
 
     private bool m_LineRendEnabled = false;
 
+    void OnEnable() {
+        ArmCount = 0;
+    }
+
     void Start() {
         m_Rigidbody = GetComponent<Rigidbody>();
         // var actionname = m_ShootAction.action.name;
