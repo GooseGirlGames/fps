@@ -15,6 +15,9 @@ public class MoveingPlatform : MonoBehaviour {
     [SerializeField]
     private Transform m_Origin;  // transform to move around
 
+    [SerializeField]
+    private float m_Speed = 4f;
+
     void Awake() {
         m_StartPos = m_Origin.position;
         m_StartRot = m_Origin.rotation;
@@ -27,9 +30,12 @@ public class MoveingPlatform : MonoBehaviour {
 
     void Update() {
         if (m_Move) {
-            var phi = -3f * Time.deltaTime;
+            var phi = -3f * Time.deltaTime * m_Speed;
             var rot = Quaternion.Euler(0, phi, 0);
             m_Origin.rotation *= rot;
+
+            var dy = 1.4f * Time.deltaTime * m_Speed;
+            m_Origin.Translate(new Vector3(0, dy, 0));
         }
     }
 
