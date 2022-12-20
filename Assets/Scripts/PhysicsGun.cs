@@ -5,6 +5,9 @@ using TMPro;
 
 public class PhysicsGun : MonoBehaviour {
 
+    [HideInInspector]
+    public MoveingPlatform CurrentMovingPlatform;
+
     [SerializeField]
     private SkinnedMeshRenderer m_ArmRenderer;
 
@@ -82,6 +85,9 @@ public class PhysicsGun : MonoBehaviour {
 
     void SetupPlayerObject() {
         // Setup GameManger's PlayerObject
+        if (!GameManager.Instance) {
+            return;
+        }
         if (GameManager.Instance.PlayerObject == null) {
             var go = this.gameObject;
             while (go.transform.parent != null) {
@@ -170,6 +176,10 @@ public class PhysicsGun : MonoBehaviour {
         m_MuzzleFlash.Trigger();
 
         ForceField.DisableAllForSeconds(1.5f);
+        if (CurrentMovingPlatform) {
+            Debug.Log("Bye");
+            CurrentMovingPlatform.Reparent(enter: false);
+        }
 
         var force = (-ShootDirection) * m_GunStrength;
         if (force.y < m_MinUpwardsForce) {

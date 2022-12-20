@@ -64,9 +64,10 @@ public class MoveingPlatform : MonoBehaviour {
     }
 
     void CheckParenting() {
-        if (!m_PlayerIsParented && m_CollidersInside.Count > 0) {
+        if (!m_PlayerIsParented && m_CollidersInside.Count > 10) {
             Reparent(enter: true);
-            StartCoroutine(StartMovingCoroutine());
+            m_Move = true;
+            //StartCoroutine(StartMovingCoroutine());
         } else if (m_PlayerIsParented && m_CollidersInside.Count == 0) {
             Reparent(enter: false);
             StopAllCoroutines();
@@ -75,10 +76,17 @@ public class MoveingPlatform : MonoBehaviour {
         }
     }
 
-    void Reparent(bool enter) {
-        // var player = GameManager.Instance.PlayerObject.transform;
-        // var parent = enter ? this.transform : null;
-        // player.SetParent(parent, worldPositionStays: true);
+    public void Reparent(bool enter) {
+        var player = GameManager.Instance.PlayerObject.transform;
+        foreach (var gun in player.GetComponentsInChildren<PhysicsGun>()) {
+            gun.CurrentMovingPlatform = enter ? this : null;
+        }
+        var parent = enter ? this.transform : null;
+        foreach (var rb in player.GetComponentsInChildren<Rigidbody>()) {
+            rb.isKinematic = enter;
+        }
+        //GameManager.Instance.PlayerRootRigidbody.isKinematic = enter;
+        player.SetParent(parent, worldPositionStays: true);
         m_PlayerIsParented = enter;
     }
 }
