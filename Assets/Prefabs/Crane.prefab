@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8312850903482259956}
+  - component: {fileID: 8392422167302422716}
   m_Layer: 0
   m_Name: Crane
   m_TagString: Untagged
@@ -63,6 +64,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &8392422167302422716
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8312850903482259963}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &8312850902095511126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -211,10 +239,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2210878025269528027}
-    - targetCorrespondingSourceObject: {fileID: 1744009728560488730, guid: a38214ed4d8209b1db20f547a2af9b9e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3575995502234666535}
   m_SourcePrefab: {fileID: 100100000, guid: a38214ed4d8209b1db20f547a2af9b9e, type: 3}
 --- !u!4 &1791948897763477606 stripped
 Transform:
@@ -284,21 +308,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Origin: {fileID: 8312850903482259956}
+  m_PlatformCenter: {fileID: 329675883571447237}
   m_Speed: 2
---- !u!114 &3575995502234666535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7741364784378699596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b88e38ee4aa2a1e088049e651f0f20de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 329675883571447237}
-  m_Strength: 20
 --- !u!4 &8419361474925648317 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a38214ed4d8209b1db20f547a2af9b9e,

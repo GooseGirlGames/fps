@@ -178,7 +178,7 @@ public class PhysicsGun : MonoBehaviour {
         ForceField.DisableAllForSeconds(1.5f);
         if (CurrentMovingPlatform) {
             Debug.Log("Bye");
-            CurrentMovingPlatform.Reparent(enter: false);
+            CurrentMovingPlatform.Reparent(enter: false, leaving_from_gun: true);
         }
 
         var force = (-ShootDirection) * m_GunStrength;
