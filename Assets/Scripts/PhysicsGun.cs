@@ -175,6 +175,9 @@ public class PhysicsGun : MonoBehaviour {
         m_GunshotAudio.PlayOneShot(m_GunshotAudio.clip);
         m_MuzzleFlash.Trigger();
 
+        GunHit gun_hit = GetRayCastTarget();
+        ShootTarget(gun_hit);
+
         ForceField.DisableAllForSeconds(1.5f);
         if (CurrentMovingPlatform) {
             Debug.Log("Bye");
@@ -194,6 +197,17 @@ public class PhysicsGun : MonoBehaviour {
         }
     }
 
+    private void ShootTarget(GunHit target) {
+        if (!target.was_hit) {
+            return;
+        }
+        Debug.Log("Shot at " + target.go.name);
+        if (target.rb) {
+            var factor = 20f;
+            target.rb.AddForce(target.dir * factor * m_GunStrength, ForceMode.Impulse);
+        }
+    }
+
     public Vector2 PositionInScreeenSpace() {
         var camera = GameManager.Instance.CurrentCamera;
         if (!camera || !m_GunSource) {
@@ -207,5 +221,45 @@ public class PhysicsGun : MonoBehaviour {
         }
         var pos = camera.WorldToScreenPoint(m_GunSource.position);
         return new Vector2(pos.x, pos.y);
+    }
+
+    private struct GunHit {
+        public bool was_hit;
+        public GameObject go;
+        public Rigidbody rb;
+        public GiantEnemySpider e;
+        public Vector3 dir;
+    }
+
+    private GunHit GetRayCastTarget() {
+        var ray = new Ray(m_GunSource.position, ShootDirection);
+        RaycastHit hit;
+        GunHit gun_hit = new GunHit();
+        gun_hit.dir = ShootDirection;
+        gun_hit.was_hit = Physics.Raycast(ray, out hit);
+
+        if (!gun_hit.was_hit) {
+            return gun_hit;
+        }
+
+        if (hit.collider) {
+            gun_hit.go = hit.collider.gameObject;
+        } else if (hit.rigidbody) {
+            gun_hit.go = hit.rigidbody.gameObject;
+        }
+
+        gun_hit.rb = gun_hit.go.GetComponent<Rigidbody>();
+
+        GameObject spider_go = gun_hit.go;
+        while (spider_go.transform.parent != null) {
+            var spider = spider_go.GetComponent<GiantEnemySpider>();
+            if (spider != null) {
+                gun_hit.e = spider;
+                break;
+            }
+            spider_go = spider_go.transform.parent.gameObject;
+        }
+
+        return gun_hit;
     }
 }
