@@ -6,7 +6,17 @@ using TMPro;
 public class PhysicsGun : MonoBehaviour {
 
     [HideInInspector]
-    public MoveingPlatform CurrentMovingPlatform;
+    public MoveingPlatform CurrentMovingPlatform {
+        get => m_CurrentMovingPlatform;
+        set {
+            m_CurrentMovingPlatform = value;
+            m_LastMovingPlatformTime = Time.fixedTime;
+        }
+    }
+
+    private MoveingPlatform m_CurrentMovingPlatform;
+
+    private float m_LastMovingPlatformTime;
 
     [SerializeField]
     private SkinnedMeshRenderer m_ArmRenderer;
@@ -263,5 +273,9 @@ public class PhysicsGun : MonoBehaviour {
         }
 
         return gun_hit;
+    }
+
+    public bool WasOnMovingPlatformRecently(float t) {
+        return CurrentMovingPlatform || (m_LastMovingPlatformTime + t >= Time.fixedTime);
     }
 }

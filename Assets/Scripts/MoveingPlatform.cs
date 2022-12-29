@@ -11,6 +11,8 @@ public class MoveingPlatform : MonoBehaviour {
     private Vector3 m_StartPos;
     private Quaternion m_StartRot;
 
+    private float m_MaxHeight = 107f;
+
     [SerializeField]
     private Transform m_Origin;  // transform to move around
 
@@ -35,9 +37,10 @@ public class MoveingPlatform : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        if (m_Move) {
+        var origin_rb = m_Origin.GetComponent<Rigidbody>();
+        var height = origin_rb.position.y;
+        if (m_Move && height < m_MaxHeight) {
             var delta_t = Time.fixedDeltaTime;
-            var origin_rb = m_Origin.GetComponent<Rigidbody>();
 
             var phi = -3f * delta_t * m_Speed;
             var rot = Quaternion.Euler(0, phi, 0);
@@ -49,8 +52,6 @@ public class MoveingPlatform : MonoBehaviour {
             // m_Origin.Translate(delta_pos);
             origin_rb.MovePosition(origin_rb.position + delta_pos);
 
-            var height = origin_rb.position.y;
-            Debug.Log(height);
 
             // var player_rb = GameManager.Instance.PlayerRootRigidbody;
             // player_rb.MovePosition(m_PlatformCenter.position);

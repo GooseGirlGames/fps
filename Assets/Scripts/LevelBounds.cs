@@ -19,7 +19,7 @@ public class LevelBounds : MonoBehaviour {
 
     public void OnTriggerExit(Collider other) {
         if (!m_IsReloading && (other.gameObject.CompareTag("Player"))) {
-            if (GameManager.Instance.PlayerObject.GetComponentInChildren<PhysicsGun>().CurrentMovingPlatform) {
+            if (GameManager.Instance.PlayerObject.GetComponentInChildren<PhysicsGun>().WasOnMovingPlatformRecently(3f)) {
                 return;
             }
             m_IsReloading = true;
