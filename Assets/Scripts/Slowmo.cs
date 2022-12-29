@@ -27,7 +27,9 @@ public class Slowmo : MonoBehaviour {
         m_TargetTimeScale = slow ? m_SlowSpeed : 1f;
 
         var delta = m_TargetTimeScale - Time.timeScale;
-        Time.timeScale += delta * m_SmoothSpeed * Time.deltaTime / Time.timeScale;
+        var timescale_new = Time.timeScale + (delta * m_SmoothSpeed * Time.deltaTime / Time.timeScale);
+        timescale_new  = Mathf.Max(0f, timescale_new);
+        Time.timeScale = timescale_new;
 
         m_SlowSource.volume = Mathf.Abs(delta) > EPSILON ? 1f : 0f;
 
