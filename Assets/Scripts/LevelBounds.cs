@@ -19,6 +19,9 @@ public class LevelBounds : MonoBehaviour {
 
     public void OnTriggerExit(Collider other) {
         if (!m_IsReloading && (other.gameObject.CompareTag("Player"))) {
+            if (GameManager.Instance.PlayerObject.GetComponentInChildren<PhysicsGun>().CurrentMovingPlatform) {
+                return;
+            }
             m_IsReloading = true;
             GameManager.Instance.Respawner.RestartLevel($"level bounds exceeded by {other.gameObject.name}");
         }
