@@ -44,7 +44,9 @@ public class ForceField : MonoBehaviour {
 
         var rb = other.attachedRigidbody;
         if (rb && (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Among"))) {
-            rb.AddForce(m_Strength * Direction(rb) * Time.fixedDeltaTime, ForceMode.Impulse);
+            var among = other.gameObject.CompareTag("Among");
+            var multiplier = among ? 5f : 1f;
+            rb.AddForce(multiplier * m_Strength * Direction(rb) * Time.fixedDeltaTime, ForceMode.Impulse);
         }
     }
 
