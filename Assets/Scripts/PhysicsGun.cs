@@ -176,7 +176,9 @@ public class PhysicsGun : MonoBehaviour {
         m_MuzzleFlash.Trigger();
 
         GunHit gun_hit = GetRayCastTarget();
-        ShootTarget(gun_hit);
+        if (!(gun_hit.was_hit && gun_hit.go.CompareTag("Player"))) {
+            ShootTarget(gun_hit);
+        }
 
         ForceField.DisableAllForSeconds(1.5f);
         if (CurrentMovingPlatform) {
