@@ -35,7 +35,7 @@ public class LosingIt : MonoBehaviour {
 
     public void WeAreLosingIt() {
         Debug.LogError("Octopus is gone");
-        GameManager.Instance.Respawner.RestartLevel();
+        GameManager.Instance.Respawner.RestartLevel("fish has lost it");
     }
 
     public float Lostness() {

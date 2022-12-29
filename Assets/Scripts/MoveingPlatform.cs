@@ -49,6 +49,9 @@ public class MoveingPlatform : MonoBehaviour {
             // m_Origin.Translate(delta_pos);
             origin_rb.MovePosition(origin_rb.position + delta_pos);
 
+            var height = origin_rb.position.y;
+            Debug.Log(height);
+
             // var player_rb = GameManager.Instance.PlayerRootRigidbody;
             // player_rb.MovePosition(m_PlatformCenter.position);
         }

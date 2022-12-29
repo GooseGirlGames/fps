@@ -18,7 +18,7 @@ public class Respawn : MonoBehaviour {
 
     void Upate() {
         if (m_RespawnAction.action.WasPressedThisFrame()) {
-            RestartLevel();
+            RestartLevel("respawn key pressed.");
         }
     }
 
@@ -43,7 +43,8 @@ public class Respawn : MonoBehaviour {
         }
     }
 
-    public void RestartLevel() {
+    public void RestartLevel(string reason = "") {
+        Debug.Log($"Restarting Level because {reason}.");
         var scene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(scene);
     }
