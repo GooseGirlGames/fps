@@ -218,6 +218,9 @@ public class PhysicsGun : MonoBehaviour {
             var factor = 20f;
             target.rb.AddForce(target.dir * factor * m_GunStrength, ForceMode.Impulse);
         }
+        if (target.e) {
+            target.e.WasShot();
+        }
     }
 
     public Vector2 PositionInScreeenSpace() {
