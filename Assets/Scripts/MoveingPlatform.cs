@@ -11,13 +11,10 @@ public class MoveingPlatform : MonoBehaviour {
     private Vector3 m_StartPos;
     private Quaternion m_StartRot;
 
-    private float m_MaxHeight = 107f;
+    private float m_MaxHeight = 73f;
 
     [SerializeField]
     private Transform m_Origin;  // transform to move around
-
-    [SerializeField]
-    private Transform m_PlatformCenter;
 
     [SerializeField]
     private float m_Speed = 4f;
@@ -36,19 +33,32 @@ public class MoveingPlatform : MonoBehaviour {
         m_Origin.rotation = m_StartRot;
     }
 
+    /*
+    public bool m_X;
+    public bool m_Y;
+    public bool m_Z;
+    private Vector3 Axis() {
+        return new Vector3(m_X?1:0, m_Y?1:0, m_Z?1:0);
+    }
+    */
+
     void FixedUpdate() {
         var origin_rb = m_Origin.GetComponent<Rigidbody>();
         var height = origin_rb.position.y;
+        Debug.Log(height);
         if (m_Move && height < m_MaxHeight) {
             var delta_t = Time.fixedDeltaTime;
 
-            var phi = -3f * delta_t * m_Speed;
-            var rot = Quaternion.Euler(0, phi, 0);
+            var phi = -3.5f * delta_t * m_Speed;
+            var axis = new Vector3(0, 1, 0);
+            var euler = axis * phi;
+            var rot = Quaternion.Euler(euler.x, euler.y, euler.z);
             // m_Origin.rotation *= rot;
             origin_rb.MoveRotation(origin_rb.rotation * rot);
 
-            var dy = 1.4f * delta_t * m_Speed;
-            var delta_pos = new Vector3(0, dy, 0);
+            var dx = 0.35f * delta_t * m_Speed;
+            var dy = 1.45f * delta_t * m_Speed;
+            var delta_pos = new Vector3(dx, dy, 0);
             // m_Origin.Translate(delta_pos);
             origin_rb.MovePosition(origin_rb.position + delta_pos);
 
@@ -129,8 +139,7 @@ public class MoveingPlatform : MonoBehaviour {
         //    rb.isKinematic = enter;
         //}
         var rb = GameManager.Instance.PlayerRootRigidbody;
-        // rb.isKinematic = enter;
-        GameManager.Instance.PlayerRootRigidbody.isKinematic = enter;
+        rb.isKinematic = enter;
         player.SetParent(parent, worldPositionStays: true);
 
         m_PlayerIsParented = enter;
