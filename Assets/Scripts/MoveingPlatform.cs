@@ -45,7 +45,6 @@ public class MoveingPlatform : MonoBehaviour {
     void FixedUpdate() {
         var origin_rb = m_Origin.GetComponent<Rigidbody>();
         var height = origin_rb.position.y;
-        Debug.Log(height);
         if (m_Move && height < m_MaxHeight) {
             var delta_t = Time.fixedDeltaTime;
 
