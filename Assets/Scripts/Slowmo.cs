@@ -28,9 +28,8 @@ public class Slowmo : MonoBehaviour {
 
         var delta = m_TargetTimeScale - Time.timeScale;
         var timescale_new = Time.timeScale + (delta * m_SmoothSpeed * Time.deltaTime / Time.timeScale);
-        timescale_new  = Mathf.Max(0f, timescale_new);
 
-        if (float.IsNaN(timescale_new) || float.IsInfinity(timescale_new)) {
+        if (timescale_new <= EPSILON || float.IsNaN(timescale_new) || float.IsInfinity(timescale_new)) {
             return;  // big oof
         }
 
