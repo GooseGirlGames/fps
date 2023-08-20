@@ -714,7 +714,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -818,6 +818,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 145cb68734a5df222a7c3b7154bd33ec, type: 3}
   m_Cooldown: 3
   m_Chance: 0.6
+  m_CooldownOnLevelLoad: 0
 --- !u!1 &7007065298746152685
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,7 +850,7 @@ Transform:
   - {fileID: 1640749790526479561}
   - {fileID: 7908039951848304737}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8441843303895872486
 GameObject:
